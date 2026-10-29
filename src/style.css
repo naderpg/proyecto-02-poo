@@ -1,0 +1,261 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+}
+
+/* 3 columnas: enunciado | interfaz (centro) | vacía */
+#app {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 40px;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+@media (max-width: 1200px) {
+    #app {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .enunciado {
+        justify-self: center;
+    }
+}
+
+/* ---- Enunciado ---- */
+.enunciado {
+    background-color: #fff;
+    color: #333;
+    border-radius: 12px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+    max-width: 480px;
+    width: 100%;
+    justify-self: end;
+    padding: 20px;
+    line-height: 1.5;
+}
+
+.enunciado h2 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.enunciado p,
+.enunciado ol {
+    margin-bottom: 8px;
+}
+
+.enunciado ol {
+    padding-left: 20px;
+}
+
+.formula {
+    background-color: #fff3e0;
+    border-left: 4px solid #ff9500;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    font-family: monospace;
+    font-variant-ligatures: none;
+    font-size: 1rem;
+}
+
+.ejemplo {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* ---- Tarjeta ---- */
+.tarjeta {
+    background-color: #333;
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3);
+    width: 640px;
+    max-width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* ---- Formulario ---- */
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+@media (max-width: 500px) {
+    .formulario {
+        grid-template-columns: 1fr;
+    }
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.completo {
+    grid-column: 1 / -1;
+}
+
+label,
+.etiqueta {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    height: 45px;
+    background-color: #222;
+    color: #fff;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    outline: none;
+}
+
+textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    box-shadow: 0 0 0 2px #ff9500;
+}
+
+/* Radios y checkbox: label con el input adentro */
+.opciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    min-height: 45px;
+    align-items: center;
+}
+
+.opciones label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #ff9500;
+    cursor: pointer;
+}
+
+/* ---- Botones ---- */
+button {
+    height: 50px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #ff9500;
+    color: white;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+    background-color: #e08300;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button.limpiar,
+button.eliminar {
+    background-color: #ff3b30;
+}
+
+button.limpiar:hover,
+button.eliminar:hover {
+    background-color: #d32f2f;
+}
+
+button.eliminar {
+    height: auto;
+    padding: 4px 10px;
+    font-size: 0.85rem;
+}
+
+/* ---- Resultados (tarjeta de abajo, ocupa todo el ancho) ---- */
+.resultados {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 1000px;
+}
+
+/* Mensaje visible solo mientras el contenedor de resultados está vacío */
+.vacio {
+    display: none;
+    padding: 20px;
+    text-align: center;
+    color: #888;
+    background-color: #222;
+    border-radius: 8px;
+}
+
+.total {
+    text-align: right;
+    color: #ccc;
+}
+
+/* ---- Tabla ---- */
+.contenedor-tabla {
+    overflow-x: auto;
+    border-radius: 8px;
+    background-color: #222;
+}
+
+.tabla:has(tbody:empty) + .vacio {
+    display: block;
+}
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #222;
+    font-size: 0.9rem;
+}
+
+.tabla th,
+.tabla td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+    white-space: nowrap;
+}
+
+.tabla th {
+    background-color: #ff9500;
+}

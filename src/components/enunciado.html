@@ -1,0 +1,15 @@
+<div class="enunciado">
+    <h2>Tarea 1: Biblioteca</h2>
+    <p>La biblioteca necesita registrar sus libros. El HTML y el CSS ya están listos, pero <b>sin ids</b>: pónselos tú a todo lo que vayas a usar desde TypeScript.</p>
+    <ol>
+        <li>Pon un <code>id</code> al formulario, a cada campo, al <code>tbody</code>, al total y al botón <b>Vaciar tabla</b>.</li>
+        <li>En <code>methods/libro.ts</code> crea la <code>interface Libro</code> con: título, autor, año (<code>number</code>), género y disponible (<code>boolean</code>).</li>
+        <li>Crea una función que lea el formulario y devuelva un <code>Libro</code>. Si falta un dato o el año no es mayor a 0, devuelve <code>null</code> y muestra un aviso.</li>
+        <li>En <code>main.ts</code> guarda cada libro en un arreglo <code>libros: Libro[]</code>.</li>
+        <li>En <code>methods/tabla.ts</code> crea una función que reciba un <code>Libro</code> y agregue su fila al <code>tbody</code>. En "Estado" escribe <i>Disponible</i> o <i>Prestado</i>.</li>
+        <li>Limpia el formulario y muestra en el total la cantidad de libros del arreglo.</li>
+        <li><b>Vaciar tabla</b> borra las filas y deja el arreglo vacío.</li>
+    </ol>
+    <div class="formula">const disponible = checkbox.checked // true o false</div>
+    <p class="ejemplo">Extra: botón "Eliminar" en cada fila que también quite el libro del arreglo.</p>
+</div>

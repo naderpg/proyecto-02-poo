@@ -1,0 +1,34 @@
+<div class="tarjeta resultados">
+    <h1>Catálogo</h1>
+
+    <div class="contenedor-tabla">
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Año</th>
+                    <th>Género</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <!--
+                Cada libro es una fila. Ejemplo:
+                <tr>
+                    <td>Cien años de soledad</td>
+                    <td>Gabriel García Márquez</td>
+                    <td>1967</td>
+                    <td>Novela</td>
+                    <td>Disponible</td>
+                </tr>
+                Deja el <tbody> vacío (sin espacios).
+            -->
+            <tbody id="cuerpotabla"></tbody>
+        </table>
+        <p class="vacio">Todavía no hay libros registrados.</p>
+    </div>
+
+    <p class="total">Total de libros: <span id="total">0</span></p>
+
+    <button type="button" class="limpiar" id="vaciar">Vaciar tabla</button>
+</div>
